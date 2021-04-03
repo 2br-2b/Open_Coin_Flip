@@ -1,0 +1,258 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="component_event" id="1" x="-481" y="-438">
+    <mutation component_type="AccelerometerSensor" is_generic="false" instance_name="AccelerometerSensor1" event_name="Shaking"></mutation>
+    <field name="COMPONENT_SELECTOR">AccelerometerSensor1</field>
+    <statement name="DO">
+      <block type="procedures_callnoreturn" id="2" inline="false">
+        <mutation name="Flip_Coin">
+          <arg name="Result"></arg>
+        </mutation>
+        <field name="PROCNAME">Flip_Coin</field>
+        <value name="ARG0">
+          <block type="lists_pick_random_item" id="3" inline="false">
+            <value name="LIST">
+              <block type="lists_create_with" id="4" inline="false">
+                <mutation items="2"></mutation>
+                <value name="ADD0">
+                  <block type="logic_boolean" id="5">
+                    <field name="BOOL">TRUE</field>
+                  </block>
+                </value>
+                <value name="ADD1">
+                  <block type="logic_false" id="6">
+                    <field name="BOOL">FALSE</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+  <block type="component_event" id="7" x="93" y="-436">
+    <mutation component_type="Button" is_generic="false" instance_name="Button2" event_name="Click"></mutation>
+    <field name="COMPONENT_SELECTOR">Button2</field>
+    <statement name="DO">
+      <block type="component_method" id="8">
+        <mutation component_type="Camera" method_name="TakePicture" is_generic="false" instance_name="Camera1"></mutation>
+        <field name="COMPONENT_SELECTOR">Camera1</field>
+      </block>
+    </statement>
+  </block>
+  <block type="component_event" id="9" x="428" y="-362">
+    <mutation component_type="Camera" is_generic="false" instance_name="Camera1" event_name="AfterPicture"></mutation>
+    <field name="COMPONENT_SELECTOR">Camera1</field>
+    <statement name="DO">
+      <block type="controls_if" id="10" inline="false">
+        <mutation else="1"></mutation>
+        <value name="IF0">
+          <block type="logic_compare" id="11">
+            <field name="OP">EQ</field>
+            <value name="A">
+              <block type="component_set_get" id="12">
+                <mutation component_type="Button" set_or_get="get" property_name="Image" is_generic="false" instance_name="Button1"></mutation>
+                <field name="COMPONENT_SELECTOR">Button1</field>
+                <field name="PROP">Image</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="component_set_get" id="13">
+                <mutation component_type="Player" set_or_get="get" property_name="Source" is_generic="false" instance_name="Heads"></mutation>
+                <field name="COMPONENT_SELECTOR">Heads</field>
+                <field name="PROP">Source</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="component_set_get" id="14" inline="false">
+            <mutation component_type="Player" set_or_get="set" property_name="Source" is_generic="false" instance_name="Heads"></mutation>
+            <field name="COMPONENT_SELECTOR">Heads</field>
+            <field name="PROP">Source</field>
+            <value name="VALUE">
+              <block type="lexical_variable_get" id="15">
+                <mutation>
+                  <eventparam name="image"></eventparam>
+                </mutation>
+                <field name="VAR">image</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+        <statement name="ELSE">
+          <block type="component_set_get" id="16" inline="false">
+            <mutation component_type="Player" set_or_get="set" property_name="Source" is_generic="false" instance_name="Tails"></mutation>
+            <field name="COMPONENT_SELECTOR">Tails</field>
+            <field name="PROP">Source</field>
+            <value name="VALUE">
+              <block type="lexical_variable_get" id="17">
+                <mutation>
+                  <eventparam name="image"></eventparam>
+                </mutation>
+                <field name="VAR">image</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+  <block type="component_event" id="18" x="-155" y="-323">
+    <mutation component_type="Button" is_generic="false" instance_name="Button1" event_name="Click"></mutation>
+    <field name="COMPONENT_SELECTOR">Button1</field>
+    <statement name="DO">
+      <block type="procedures_callnoreturn" id="19" inline="false">
+        <mutation name="Flip_Coin">
+          <arg name="Result"></arg>
+        </mutation>
+        <field name="PROCNAME">Flip_Coin</field>
+        <value name="ARG0">
+          <block type="lists_pick_random_item" id="20" inline="false">
+            <value name="LIST">
+              <block type="lists_create_with" id="21" inline="false">
+                <mutation items="2"></mutation>
+                <value name="ADD0">
+                  <block type="logic_boolean" id="22">
+                    <field name="BOOL">TRUE</field>
+                  </block>
+                </value>
+                <value name="ADD1">
+                  <block type="logic_false" id="23">
+                    <field name="BOOL">FALSE</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+  <block type="component_event" id="37" x="92" y="-145">
+    <mutation component_type="ImagePicker" is_generic="false" instance_name="ImagePicker1" event_name="AfterPicking"></mutation>
+    <field name="COMPONENT_SELECTOR">ImagePicker1</field>
+    <statement name="DO">
+      <block type="controls_if" id="38" inline="false">
+        <mutation else="1"></mutation>
+        <value name="IF0">
+          <block type="logic_compare" id="39">
+            <field name="OP">EQ</field>
+            <value name="A">
+              <block type="component_set_get" id="40">
+                <mutation component_type="Button" set_or_get="get" property_name="Image" is_generic="false" instance_name="Button1"></mutation>
+                <field name="COMPONENT_SELECTOR">Button1</field>
+                <field name="PROP">Image</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="component_set_get" id="41">
+                <mutation component_type="Player" set_or_get="get" property_name="Source" is_generic="false" instance_name="Heads"></mutation>
+                <field name="COMPONENT_SELECTOR">Heads</field>
+                <field name="PROP">Source</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="component_set_get" id="42" inline="false">
+            <mutation component_type="Player" set_or_get="set" property_name="Source" is_generic="false" instance_name="Heads"></mutation>
+            <field name="COMPONENT_SELECTOR">Heads</field>
+            <field name="PROP">Source</field>
+            <value name="VALUE">
+              <block type="component_set_get" id="43">
+                <mutation component_type="ImagePicker" set_or_get="get" property_name="Selection" is_generic="false" instance_name="ImagePicker1"></mutation>
+                <field name="COMPONENT_SELECTOR">ImagePicker1</field>
+                <field name="PROP">Selection</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+        <statement name="ELSE">
+          <block type="component_set_get" id="44" inline="false">
+            <mutation component_type="Player" set_or_get="set" property_name="Source" is_generic="false" instance_name="Tails"></mutation>
+            <field name="COMPONENT_SELECTOR">Tails</field>
+            <field name="PROP">Source</field>
+            <value name="VALUE">
+              <block type="component_set_get" id="45">
+                <mutation component_type="ImagePicker" set_or_get="get" property_name="Selection" is_generic="false" instance_name="ImagePicker1"></mutation>
+                <field name="COMPONENT_SELECTOR">ImagePicker1</field>
+                <field name="PROP">Selection</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="24" x="-439" y="-115">
+    <mutation>
+      <arg name="Result"></arg>
+    </mutation>
+    <field name="NAME">Flip_Coin</field>
+    <field name="VAR0">Result</field>
+    <statement name="STACK">
+      <block type="controls_if" id="27" inline="false">
+        <mutation else="1"></mutation>
+        <value name="IF0">
+          <block type="lexical_variable_get" id="28">
+            <field name="VAR">Result</field>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="component_set_get" id="29" inline="false">
+            <mutation component_type="Button" set_or_get="set" property_name="Image" is_generic="false" instance_name="Button1"></mutation>
+            <field name="COMPONENT_SELECTOR">Button1</field>
+            <field name="PROP">Image</field>
+            <value name="VALUE">
+              <block type="component_set_get" id="30">
+                <mutation component_type="Player" set_or_get="get" property_name="Source" is_generic="false" instance_name="Heads"></mutation>
+                <field name="COMPONENT_SELECTOR">Heads</field>
+                <field name="PROP">Source</field>
+              </block>
+            </value>
+            <next>
+              <block type="component_set_get" id="31" inline="false">
+                <mutation component_type="Label" set_or_get="set" property_name="Text" is_generic="false" instance_name="Label1"></mutation>
+                <field name="COMPONENT_SELECTOR">Label1</field>
+                <field name="PROP">Text</field>
+                <value name="VALUE">
+                  <block type="text" id="32">
+                    <field name="TEXT">Heads!</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <statement name="ELSE">
+          <block type="component_set_get" id="33" inline="false">
+            <mutation component_type="Button" set_or_get="set" property_name="Image" is_generic="false" instance_name="Button1"></mutation>
+            <field name="COMPONENT_SELECTOR">Button1</field>
+            <field name="PROP">Image</field>
+            <value name="VALUE">
+              <block type="component_set_get" id="34">
+                <mutation component_type="Player" set_or_get="get" property_name="Source" is_generic="false" instance_name="Tails"></mutation>
+                <field name="COMPONENT_SELECTOR">Tails</field>
+                <field name="PROP">Source</field>
+              </block>
+            </value>
+            <next>
+              <block type="component_set_get" id="35" inline="false">
+                <mutation component_type="Label" set_or_get="set" property_name="Text" is_generic="false" instance_name="Label1"></mutation>
+                <field name="COMPONENT_SELECTOR">Label1</field>
+                <field name="PROP">Text</field>
+                <value name="VALUE">
+                  <block type="text" id="36">
+                    <field name="TEXT">Tails!</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+  <yacodeblocks ya-version="208" language-version="33"></yacodeblocks>
+</xml>
